@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 class Post(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    authors = models.CharField(max_length=100, default="Author1, Author2")
     type = models.CharField(default="open", max_length=20)
     title = models.CharField(max_length=1000, default="Title here...")
     abstract = models.TextField(max_length=10000, default="Abstract goes here...")
@@ -12,7 +13,7 @@ class Post(models.Model):
     closed = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.user.first_name + " " + self.user.last_name + ":" + self.title
+        return self.authors + ": " + self.title
 
 
 class Comment(models.Model):

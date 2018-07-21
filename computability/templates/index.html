@@ -29,14 +29,14 @@
 </nav>
 
 
-{% latexify 'Hello World! $\rightarrow$' %}
-
 {% for problem in problems %}
     <div class="shadow card" style="margin-left: 50px; margin-right: 50px; margin-top: 10px; margin-bottom: 20px">
         <div class="card-body">
-            <h5 class="card-title" style="text-align: center; font-family: latex">{% latexify problem.title %}</h5>
-            <p class="card-text" style="margin-left: 10%; margin-right: 10%">{{ problem.abstract }}</p>
-            <p class="card-text">{{ problem.text }}</p>
+            <h2 class="card-title" style="margin-left: 10%; margin-right: 10%; margin-top: 1em; text-align: center; font-family: latex; font-weight: bold">{% latexify problem.title  parse_math=True  %}</h2>
+            <p class="card-title" style="text-align: center; font-family: latex">{{ problem.created }}</p>
+            <p class="card-title" style="text-align: center; font-family: latex; margin-top: -10px">{{ problem.authors }}</p>
+            <p class="card-text" style="margin-left: 10%; margin-right: 10%; margin-bottom: 1em; text-align: justify">{% latexify problem.abstract parse_math=True %}</p>
+{#            <p class="card-text">{% latexify problem.text parse_math=True %}</p>#}
         </div>
     </div>
 {% endfor %}
