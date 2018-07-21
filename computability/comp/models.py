@@ -9,6 +9,7 @@ class Post(models.Model):
     title = models.CharField(max_length=1000, default="Title here...")
     abstract = models.TextField(max_length=10000, default="Abstract goes here...")
     text = models.TextField(max_length=50000, default="Text goes here...")
+    closed = models.BooleanField(default=False)
 
     def __str__(self):
         return self.user.first_name + " " + self.user.last_name + ":" + self.title
