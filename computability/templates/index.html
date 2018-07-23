@@ -1,47 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load latexify %}
-<head>
-    {% include 'latexify/stylesheets.html' %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="/static/index.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"
-            integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
-            crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
-          integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <title>Problems in Computability</title>
-</head>
-<body onload="onload()">
-<nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">
-{#        <img src="/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top"#}
-{#             alt="">#}
-        Problems in Computability
-    </a>
-</nav>
 
-<div style="display: flex; flex-direction: column; align-items: center">
-{% for problem in problems %}
-    <div class="shadow card" style="margin-left: 5%; margin-right: 5%; margin-top: 10px; margin-bottom: 20px; width: 900px;">
-        <div class="card-body">
-            <h2 class="card-title" style="margin-left: 10%; margin-right: 10%; margin-top: 1em; text-align: center; font-family: latex; font-weight: bold">{% latexify problem.title  parse_math=True  %}</h2>
-            <p class="card-title" style="text-align: center; font-family: latex">{{ problem.created }}</p>
-            <p class="card-title" style="text-align: center; font-family: latex; margin-top: -10px">{{ problem.authors }}</p>
-            <p class="card-text" style="margin-left: 10%; margin-right: 10%; margin-bottom: 1em; text-align: justify">{% latexify problem.abstract parse_math=True %}</p>
-{#            <p class="card-text">{% latexify problem.text parse_math=True %}</p>#}
+{% include "header.html" %}
+
+<div style="display: flex; flex-direction: column; align-items: center; margin-top: 5em">
+    {% for problem in problems %}
+        <div class="shadow card"
+             style="margin-left: 5%; margin-right: 5%; margin-top: 10px; margin-bottom: 20px; width: 900px;">
+            <div class="card-body">
+                <h2 class="card-title"
+                    style="margin-left: 10%; margin-right: 10%; margin-top: 1em; text-align: center; font-family: latex; font-weight: bold">{% latexify problem.title parse_math=True %}</h2>
+                <p class="card-title" style="text-align: center; font-family: latex">{{ problem.created }}</p>
+                <p class="card-title"
+                   style="text-align: center; font-family: latex; margin-top: -10px">{{ problem.authors }}</p>
+                <p class="card-text"
+                   style="margin-left: 10%; margin-right: 10%; margin-bottom: 1em; text-align: justify">{% latexify problem.abstract parse_math=True %}</p>
+                {#            <p class="card-text">{% latexify problem.text parse_math=True %}</p>#}
+            </div>
         </div>
-    </div>
-{% endfor %}
+    {% endfor %}
 </div>
-
 
 {% include "latexify/scripts.html" %}
 </body>

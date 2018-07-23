@@ -21,5 +21,6 @@ from computability import settings
 
 urlpatterns = [
     url(r'^$', views.index),
+    url(r'^workshop$', views.almaty2018),
     url(r'^admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

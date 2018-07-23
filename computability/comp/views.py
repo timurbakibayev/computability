@@ -12,3 +12,8 @@ def index(request):
         post.abstract = latexify(post.abstract)
 
     return render(request,"index.html",{"user": user, "problems": latex_posts})
+
+
+def almaty2018(request):
+    user = request.user
+    return render(request,"almaty2018.html",{"user": user})
