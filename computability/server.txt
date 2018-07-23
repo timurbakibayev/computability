@@ -1,2 +1,12 @@
-IP: 185.22.65.46
+ssh root@185.22.65.46
 t2zPD97x6l
+cd /var/www/computability
+git pull
+source venv/bin/activate
+
+cd computability
+python manage.py collectstatic
+python manage.py migrate
+
+service gunicorn restart
+service nginx restart
