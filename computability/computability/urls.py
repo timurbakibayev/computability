@@ -20,7 +20,10 @@ from comp import views
 from computability import settings
 
 urlpatterns = [
-    url(r'^$', views.index),
+    url(r'^$', views.almaty2018),
+    url(r'^problems$', views.index),
     url(r'^workshop$', views.almaty2018),
+    url(r'^workshop/venue$', views.almaty2018venue),
+    url(r'^workshop/abstracts', views.almaty2018abstracts),
     url(r'^admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
