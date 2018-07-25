@@ -44,3 +44,7 @@ def almaty2018program(request):
     user = request.user
     return render(request,"almaty2018program.html",{"user": user})
 
+def almaty2018orgcom(request):
+    user = request.user
+    return render(request,"almaty2018orgcom.html",{"user": user})
+

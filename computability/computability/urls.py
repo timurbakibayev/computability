@@ -27,5 +27,6 @@ urlpatterns = [
     url(r'^workshop/abstracts', views.almaty2018abstracts),
     url(r'^workshop/participants', views.almaty2018participants),
     url(r'^workshop/program', views.almaty2018program),
+    url(r'^workshop/orgcom', views.almaty2018orgcom),
     url(r'^admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
