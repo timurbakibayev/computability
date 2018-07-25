@@ -35,3 +35,12 @@ def almaty2018(request):
 def almaty2018venue(request):
     user = request.user
     return render(request,"almaty2018venue.html",{"user": user})
+
+def almaty2018participants(request):
+    user = request.user
+    return render(request,"almaty2018participants.html",{"user": user})
+
+def almaty2018program(request):
+    user = request.user
+    return render(request,"almaty2018program.html",{"user": user})
+
