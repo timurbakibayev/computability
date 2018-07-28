@@ -12,7 +12,7 @@
             <div class="card-body">
                 <h2 class="card-title"
                     style="margin-left: 10%; margin-right: 10%; margin-top: 1em; text-align: center; font-family: latex; font-weight: bold">{% latexify problem.title parse_math=True %}</h2>
-                <p class="card-title" style="text-align: center; font-family: latex">{{ problem.created }}</p>
+                <p class="card-title" style="text-align: center; font-family: latex">{{ problem.created | date:'M d, Y'}}</p>
                 <p class="card-title"
                    style="text-align: center; font-family: latex; margin-top: -10px">{{ problem.authors }}</p>
                 <p class="card-text"
